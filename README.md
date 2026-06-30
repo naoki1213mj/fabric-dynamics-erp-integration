@@ -116,5 +116,6 @@ uv run --extra foundry python scripts/provision_prompt_agent.py --with-kb
 - [`AGENTS.md`](AGENTS.md) — 目的・絶対条件・アーキテクチャ判断・完了条件
 - [`docs/18-operator-handoff.md`](docs/18-operator-handoff.md) — 運用ハンドオフ / デモ台本 / 公開フォーム値
 - [`docs/19-demo-flow-and-changes.md`](docs/19-demo-flow-and-changes.md) — デモフロー図解と挙動変更まとめ
+- [`docs/architecture.drawio`](docs/architecture.drawio) — Azure構成図ベースの全体アーキテクチャ（draw.io / VS Code drawio 拡張で開く）
 - [`docs/17-deployment-and-demo.md`](docs/17-deployment-and-demo.md) — デプロイ / デモ / teardown
 - [`power-automate/logic-apps/README.md`](power-automate/logic-apps/README.md) — Logic Apps 実装と運用
