@@ -1,0 +1,181 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram id="mq-arch-personas" name="工場ペルソナ × 営業ペルソナ アーキテクチャ">
+    <mxGraphModel dx="1400" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1720" pageHeight="1180" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="工場ペルソナ × 営業ペルソナ — 調査フロー アーキテクチャ（1エージェント・2モード）" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1f3864;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1640" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="1つの Foundry エージェント（factory / sales モード）を、2人のペルソナが OBO（本人 identity）で利用。AIは調査と整理、担当者決定と引き継ぎは決定論ワークフロー。" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="1640" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- LANE: FACTORY PERSONA -->
+        <mxCell id="laneF" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#eaf3ff;strokeColor=#6c8ebf;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="1640" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="laneF_t" value="①&#160; 工場ペルソナ（現場品質・是正）" style="text;html=1;align=left;verticalAlign=middle;fontSize=15;fontStyle=1;fontColor=#1f3864;" vertex="1" parent="1">
+          <mxGeometry x="58" y="110" width="520" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- LANE: SHARED PLATFORM -->
+        <mxCell id="shared" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#f3f5f9;strokeColor=#8593a8;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="1640" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="shared_t" value="共有プラットフォーム — 1つの Foundry エージェント（factory / sales モード）＋ 決定論オートメーション" style="text;html=1;align=left;verticalAlign=middle;fontSize=15;fontStyle=1;fontColor=#374a5e;" vertex="1" parent="1">
+          <mxGeometry x="58" y="390" width="1000" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- LANE: SALES PERSONA -->
+        <mxCell id="laneS" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#e8f6f2;strokeColor=#2f9e8f;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="40" y="750" width="1640" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="laneS_t" value="②&#160; 営業ペルソナ（顧客影響・引き継ぎ）" style="text;html=1;align=left;verticalAlign=middle;fontSize=15;fontStyle=1;fontColor=#12604f;" vertex="1" parent="1">
+          <mxGeometry x="58" y="760" width="520" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- FACTORY NODES -->
+        <mxCell id="fa_actor" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#6c8ebf;strokeColor=#3a5f8f;" vertex="1" parent="1">
+          <mxGeometry x="72" y="182" width="40" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="fa_persona" value="工場ペルソナ&#10;工場太郎&#10;Taro.Kojyo@…" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbe7fb;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="120" y="192" width="150" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="fa_teams" value="Teams @メンション通知&#10;品質異常＋AI調査リンク" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6e9ff;strokeColor=#5b5fc7;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="192" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="fa_copilot" value="M365 Copilot（factory モード）&#10;Fabric異常＋品質文書を横断調査" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efe6ff;strokeColor=#7a52cc;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="192" width="210" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="fa_out" value="工場アウトプット&#10;原因仮説(unverified)／是正案／引き継ぎ推奨" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="790" y="192" width="230" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="fa_handoff" value="引き継ぎ判断（人）&#10;candidate として営業へ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="192" width="200" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- SALES NODES -->
+        <mxCell id="sa_actor" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#2f9e8f;strokeColor=#1c6b60;" vertex="1" parent="1">
+          <mxGeometry x="72" y="810" width="40" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_persona" value="営業ペルソナ&#10;営業太郎&#10;Taro.Eigyo@…" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeee6;strokeColor=#2f9e8f;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="120" y="820" width="150" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_teams" value="Teams @メンション通知&#10;引き継ぎ（candidate 影響）＋AI調査リンク" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6e9ff;strokeColor=#5b5fc7;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="820" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_copilot" value="M365 Copilot（sales モード）&#10;Contoso candidate 影響受注を照会（lot 連動）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efe6ff;strokeColor=#7a52cc;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="820" width="210" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_out" value="営業アウトプット&#10;candidate 影響受注（最大3件・confirmed にしない）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f9e8f;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="790" y="820" width="230" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_cowork" value="Copilot Cowork&#10;会議・資料・初報メール案（送信は承認制）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efe6ff;strokeColor=#7a52cc;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="820" width="200" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- SHARED: automation -->
+        <mxCell id="auto" value="決定論オートメーション&#10;&#10;Activator（Eventhouse KQL・60秒）&#10;→ User Data Function&#10;→ Azure Logic Apps → SharePoint&#10;&#10;・StakeholderRouting（担当者を確定）&#10;・QualityIncidents／WorkPackages&#10;・Teams 通知" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fillColor=#fff5e3;strokeColor=#d79b00;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="290" y="440" width="250" height="240" as="geometry" />
+        </mxCell>
+
+        <!-- SHARED: AI platform -->
+        <mxCell id="model" value="gpt-5.4-mini" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/ai_machine_learning/Azure_OpenAI.svg;" vertex="1" parent="1">
+          <mxGeometry x="560" y="558" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" value="Foundry Prompt Agent（1つ）&#10;factory / sales モード・OBO" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/ai_machine_learning/AI_Studio.svg;" vertex="1" parent="1">
+          <mxGeometry x="616" y="436" width="58" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="da" value="Fabric Data Agent&#10;da_manufacturing_erp（NL2SQL・OBO）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6f5e3;strokeColor=#2f9e6f;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="830" y="436" width="240" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="iq" value="Foundry IQ / AI Search&#10;品質文書 KB（8D/PFMEA）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/app_services/Search_Services.svg;" vertex="1" parent="1">
+          <mxGeometry x="742" y="558" width="56" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="fabric" value="Fabric RTI ＋ ERP&#10;Eventhouse / Lakehouse&#10;（Telemetry・受注/返品）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/databases/Azure_Data_Explorer_Clusters.svg;" vertex="1" parent="1">
+          <mxGeometry x="922" y="560" width="56" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="rtdash" value="Real-Time Dashboard&#10;RTI 製造品質モニタリング（監視）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/other/Azure_Monitor_Dashboard.svg;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="560" width="56" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- FACTORY LANE EDGES -->
+        <mxCell id="efa1" value="通知を確認" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#3a76c4;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="fa_persona" target="fa_teams">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="efa2" value="AI調査を開始" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#3a76c4;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="fa_teams" target="fa_copilot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="efa3" value="調査結果" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#3a76c4;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="fa_copilot" target="fa_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="efa4" value="人が判断" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#3a76c4;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="fa_out" target="fa_handoff">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SALES LANE EDGES -->
+        <mxCell id="esa1" value="通知を確認" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e8f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sa_persona" target="sa_teams">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esa2" value="AI調査を開始" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e8f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sa_teams" target="sa_copilot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esa3" value="調査結果" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e8f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sa_copilot" target="sa_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esa4" value="Work Package" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e8f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sa_out" target="sa_cowork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- COPILOT -> SHARED AGENT (both personas, one agent) -->
+        <mxCell id="ec1" value="OBO 調査" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=10;dashed=1;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="fa_copilot" target="agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2" value="OBO 調査" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=10;dashed=1;endArrow=block;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="sa_copilot" target="agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AGENT -> TOOLS -->
+        <mxCell id="eg1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;endArrow=block;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="agent" target="model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg2" value="OBO 照会" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#e8820c;fontSize=10;dashed=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="agent" target="da">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg3" value="文書（MCP）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=10;endArrow=block;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="agent" target="iq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg4" value="SQL / KQL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="fabric" target="da">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eg5" value="監視" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;dashed=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="fabric" target="rtdash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- AUTOMATION -> PERSONAS (notify) and HANDOFF -->
+        <mxCell id="en1" value="自動通知" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0.25;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="auto" target="fa_teams">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="en2" value="自動通知＋担当割当" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="auto" target="sa_teams">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eh1" value="candidate 引き継ぎ → 担当確定（Routing）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.1;" edge="1" parent="1" source="fa_handoff" target="auto">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1160" y="424" />
+              <mxPoint x="560" y="424" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LEGEND / SAFETY BOUNDARIES -->
+        <mxCell id="legend" value="凡例 / 安全境界&#10;— 1つの Foundry エージェントを factory / sales モードで共用（両ペルソナが本人 identity=OBO で利用）&#10;— 橙の破線: OBO（サインインユーザー identity を Fabric Data Agent まで伝播）&#10;— 担当者は StakeholderRouting で決定（AIは推測しない）／ Cowork には確定した必須参加者 UPN を渡す&#10;— 原因仮説は未検証(unverified) ／ 製品一致のみは candidate（confirmed にしない）&#10;— 設備停止・出荷停止・ERP更新・顧客送信は自動実行しない（Cowork の会議作成・送信も承認制）" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;fillColor=#fffdef;strokeColor=#c0a000;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1020" width="1640" height="140" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

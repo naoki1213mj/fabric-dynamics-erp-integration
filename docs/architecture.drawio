@@ -78,6 +78,9 @@
         <mxCell id="da" value="Fabric Data Agent&#10;da_manufacturing_erp（NL2SQL・OBO）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6f5e3;strokeColor=#2f9e6f;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="660" y="610" width="240" height="70" as="geometry" />
         </mxCell>
+        <mxCell id="rtdash" value="Real-Time Dashboard&#10;RTI 製造品質モニタリング（監視）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/other/Azure_Monitor_Dashboard.svg;" vertex="1" parent="1">
+          <mxGeometry x="574" y="330" width="56" height="52" as="geometry" />
+        </mxCell>
 
         <!-- ZONE 3: AUTOMATION -->
         <mxCell id="la" value="Azure Logic Apps&#10;ingress / handoff / handoff-link&#10;StakeholderRouting で担当者を確定" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/integration/Logic_Apps.svg;" vertex="1" parent="1">
@@ -125,13 +128,16 @@
         <mxCell id="e2a" value="取込" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="es" target="eh">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2b" value="2 ≥50Nm 検知" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="eh" target="act">
+        <mxCell id="e2b" value="2 KQL60秒 ≥50Nm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="eh" target="act">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e2c" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="act" target="udf">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e2d" value="ミラー" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;dashed=1;endArrow=block;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="eh" target="lh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2e" value="監視" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;dashed=1;endArrow=block;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="eh" target="rtdash">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="edl" value="読取" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="lh" target="da">
