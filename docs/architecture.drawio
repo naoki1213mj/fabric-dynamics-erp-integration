@@ -65,7 +65,7 @@
         <mxCell id="eh" value="Eventhouse / KQL&#10;eh_manufacturing_rti（Telemetry）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;image=img/lib/azure2/databases/Azure_Data_Explorer_Clusters.svg;" vertex="1" parent="1">
           <mxGeometry x="560" y="210" width="56" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="act" value="Activator&#10;factory_activator / torque_alert&#10;トルク平均 ≥ 50Nm で発火" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6f5e3;strokeColor=#2f9e6f;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="act" value="Activator&#10;factory_activator / torque_alert&#10;トルク平均 &gt; 50Nm で発火" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6f5e3;strokeColor=#2f9e6f;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="676" y="196" width="180" height="80" as="geometry" />
         </mxCell>
         <mxCell id="udf" value="User Data Function&#10;triggerQualityIncident" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="1">
@@ -128,13 +128,13 @@
         <mxCell id="e2a" value="取込" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="es" target="eh">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2b" value="2 KQL60秒 ≥50Nm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="eh" target="act">
+        <mxCell id="e2b" value="2 KQL60秒 &gt;50Nm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="eh" target="act">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e2c" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="act" target="udf">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2d" value="ミラー" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;dashed=1;endArrow=block;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="eh" target="lh">
+        <mxCell id="e2d" value="宛先(Delta≤60s)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="es" target="lh">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e2e" value="監視" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=10;dashed=1;endArrow=block;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="eh" target="rtdash">
