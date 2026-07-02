@@ -70,7 +70,7 @@
         <mxCell id="fa_out" value="工場アウトプット&#10;原因仮説(unverified)／是正案／引き継ぎ推奨" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="790" y="180" width="230" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="fa_handoff" value="引き継ぎ判断（人）&#10;candidate として営業へ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+        <mxCell id="fa_handoff" value="引き継ぎ判断（人）&#10;候補影響として営業へ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
           <mxGeometry x="1060" y="180" width="200" height="64" as="geometry" />
         </mxCell>
         <mxCell id="fa_cowork" value="Copilot Cowork&#10;暫定封じ込め会議・資料（会議作成は承認制）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efe6ff;strokeColor=#7a52cc;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
@@ -250,7 +250,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="eh1" value="candidate 引き継ぎ要求" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0.5;exitY=1;entryX=0.65;entryY=0;" edge="1" parent="1" source="fa_handoff" target="logicapps">
+        <mxCell id="eh1" value="候補影響の引き継ぎ要求" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0.5;exitY=1;entryX=0.65;entryY=0;" edge="1" parent="1" source="fa_handoff" target="logicapps">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1160" y="672" />
