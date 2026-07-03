@@ -1,0 +1,244 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram id="mq-arch-layers" name="レイヤ型アーキテクチャ（ユーザー→UI→AI+WF→Fabric→データ）">
+    <mxGraphModel dx="1400" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2100" pageHeight="1180" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="製造品質インシデント調査 — レイヤ型アーキテクチャ（ユーザー → UI → AI＋ワークフロー → Fabric → データソース）" style="text;html=1;align=center;verticalAlign=middle;fontSize=19;fontStyle=1;fontColor=#1f3864;" vertex="1" parent="1">
+          <mxGeometry x="40" y="18" width="2020" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="▶ 紫: AI調査（クエリ・OBO, 左→右）　　◀ 橙: 検知・通知（イベント, 右→左）　　緑: データ取り込み　　（担当者決定と引き継ぎは決定論ワークフロー）" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="40" y="54" width="2020" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- COLUMN CONTAINERS -->
+        <mxCell id="z1" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#eaf3ff;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="96" width="250" height="920" as="geometry" />
+        </mxCell>
+        <mxCell id="z1t" value="① ユーザー" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1f3864;" vertex="1" parent="1">
+          <mxGeometry x="56" y="104" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="z2" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#f1ecfb;strokeColor=#7a52cc;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="310" y="96" width="320" height="920" as="geometry" />
+        </mxCell>
+        <mxCell id="z2t" value="② UI（Microsoft 365）" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#4b2e83;" vertex="1" parent="1">
+          <mxGeometry x="326" y="104" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="z3" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#f4f6fa;strokeColor=#8593a8;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="650" y="96" width="560" height="920" as="geometry" />
+        </mxCell>
+        <mxCell id="z3t" value="③ AI ＋ ワークフロー（Logic Apps）" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#374a5e;" vertex="1" parent="1">
+          <mxGeometry x="666" y="104" width="520" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="z4" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#e9faf0;strokeColor=#2f9e6f;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="96" width="560" height="920" as="geometry" />
+        </mxCell>
+        <mxCell id="z4t" value="④ Microsoft Fabric（RTI）" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1b5e3a;" vertex="1" parent="1">
+          <mxGeometry x="1246" y="104" width="520" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="z5" value="" style="rounded=8;whiteSpace=wrap;html=1;fillColor=#eef2f8;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1810" y="96" width="250" height="920" as="geometry" />
+        </mxCell>
+        <mxCell id="z5t" value="⑤ データソース" style="text;html=1;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1f3864;" vertex="1" parent="1">
+          <mxGeometry x="1826" y="104" width="220" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- SUB-ZONE FRAMES in col3 -->
+        <mxCell id="grp_wf" value="決定論ワークフロー（Azure Logic Apps）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;strokeWidth=1.5;dashed=1;dashPattern=8 6;verticalAlign=top;fontSize=11;fontColor=#8a5a00;align=left;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="666" y="138" width="528" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="grp_ai" value="AI（Microsoft Foundry）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7a52cc;strokeWidth=1.5;dashed=1;dashPattern=8 6;verticalAlign=top;fontSize=11;fontColor=#5a3fa0;align=left;spacingLeft=8;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="666" y="372" width="360" height="216" as="geometry" />
+        </mxCell>
+
+        <!-- COL1 USERS -->
+        <mxCell id="fa_actor" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#6c8ebf;strokeColor=#3a5f8f;" vertex="1" parent="1">
+          <mxGeometry x="52" y="302" width="32" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="u_factory" value="工場担当者&#10;工場太郎&#10;Taro.Kojyo@…" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbe7fb;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="92" y="300" width="180" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_actor" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#2f9e8f;strokeColor=#1c6b60;" vertex="1" parent="1">
+          <mxGeometry x="52" y="638" width="32" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="u_sales" value="営業担当者&#10;営業太郎&#10;Taro.Eigyo@…" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeee6;strokeColor=#2f9e8f;fontSize=11;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="92" y="636" width="180" height="66" as="geometry" />
+        </mxCell>
+
+        <!-- COL2 UI -->
+        <mxCell id="ui_teams" value="Microsoft Teams&#10;@メンション通知&#10;AI調査 / 引き継ぎリンク" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6e9ff;strokeColor=#5b5fc7;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="150" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_copilot" value="M365 Copilot&#10;factory / sales モード&#10;（公開エージェント）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efe6ff;strokeColor=#7a52cc;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="380" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_cowork" value="Copilot Cowork&#10;会議・資料・初報メール案&#10;（送信は承認制）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efe6ff;strokeColor=#7a52cc;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="636" width="270" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- COL3 WORKFLOW -->
+        <mxCell id="wf_logic" value="Azure Logic Apps&#10;ingress / handoff / handoff-link" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/integration/Logic_Apps.svg;" vertex="1" parent="1">
+          <mxGeometry x="700" y="176" width="56" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="wf_sp" value="SharePoint リスト&#10;MQ_StakeholderRouting&#10;MQ_QualityIncidents / MQ_WorkPackages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6c7;strokeColor=#d79b00;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="930" y="168" width="250" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- COL3 AI -->
+        <mxCell id="ai_agent" value="Foundry Prompt Agent（1つ）&#10;factory / sales・OBO" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/ai_machine_learning/AI_Studio.svg;" vertex="1" parent="1">
+          <mxGeometry x="702" y="392" width="58" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="ai_model" value="gpt-5.4-mini" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/ai_machine_learning/Azure_OpenAI.svg;" vertex="1" parent="1">
+          <mxGeometry x="704" y="520" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="ai_iq" value="Foundry IQ / AI Search&#10;品質文書 KB（8D/PFMEA）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/app_services/Search_Services.svg;" vertex="1" parent="1">
+          <mxGeometry x="884" y="510" width="56" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- COL4 FABRIC : top row (trigger) -->
+        <mxCell id="fb_udf" value="User Data Function&#10;triggerQualityIncident" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/compute/Function_Apps.svg;" vertex="1" parent="1">
+          <mxGeometry x="1264" y="166" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="fb_activator" value="Activator（Fabric）&#10;&gt;50Nm・60秒KQL" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/management_governance/Alerts.svg;" vertex="1" parent="1">
+          <mxGeometry x="1444" y="166" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="fb_eventhouse" value="Eventhouse / KQL&#10;eh_manufacturing_rti" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/databases/Azure_Data_Explorer_Clusters.svg;" vertex="1" parent="1">
+          <mxGeometry x="1624" y="166" width="52" height="48" as="geometry" />
+        </mxCell>
+        <!-- COL4 FABRIC : middle row (data / query) -->
+        <mxCell id="fb_dataagent" value="Fabric Data Agent&#10;da_manufacturing_erp（NL2SQL・OBO）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6f5e3;strokeColor=#2f9e6f;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="388" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fb_lakehouse" value="Lakehouse&#10;lh_quality_analytics" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/analytics/Azure_Synapse_Analytics.svg;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="394" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="fb_eventstream" value="Eventstream&#10;es_client_telemetry" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/analytics/Event_Hubs.svg;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="392" width="52" height="48" as="geometry" />
+        </mxCell>
+        <!-- COL4 FABRIC : monitor -->
+        <mxCell id="fb_rtdash" value="Real-Time Dashboard&#10;（監視）" style="image;aspect=fixed;html=1;points=[];align=center;verticalLabelPosition=bottom;verticalAlign=top;fontSize=9;image=img/lib/azure2/other/Azure_Monitor_Dashboard.svg;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="612" width="56" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- COL5 DATA SOURCES -->
+        <mxCell id="ds_sensor" value="製造ライン センサー&#10;テレメトリ&#10;（トルク/振動/温度）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1830" y="560" width="190" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="ds_erp" value="Dynamics 365 ERP&#10;受注・返品&#10;（D365 / Dataverse）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1830" y="700" width="190" height="74" as="geometry" />
+        </mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="legend" value="凡例 / 安全境界&#10;— レイヤ: ① ユーザー → ② UI（Teams・M365 Copilot・Cowork）→ ③ AI＋ワークフロー（Foundry ＋ Logic Apps ＋ SharePoint）→ ④ Fabric RTI → ⑤ データソース&#10;— Teams は ②UI（通知・操作面）／ Logic Apps は ③ワークフローの実行主体／ SharePoint は ③の記録・ルーティング保管（StakeholderRouting・Incidents・WorkPackages）&#10;— 橙(◀ 検知・通知): Fabric異常 → Activator → UDF → Logic Apps → SharePoint参照/記録 → Teams → ユーザー　／　紫(▶ 調査): ユーザー → Copilot → Foundry Agent → (OBO) → Fabric Data Agent&#10;— 担当者は StakeholderRouting で決定（AIは推測しない）／ 原因仮説は未検証 ／ 製品一致のみは candidate（confirmedにしない・営業は最大3件）&#10;— 設備停止・出荷停止・ERP更新・顧客送信は自動実行しない（Cowork の会議作成・送信も人の承認後）" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;fillColor=#fffdef;strokeColor=#c0a000;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1036" width="2020" height="132" as="geometry" />
+        </mxCell>
+
+        <!-- ===== INGESTION (green) ===== -->
+        <mxCell id="i_sensor_es" value="テレメトリ" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=9;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="ds_sensor" target="fb_eventstream">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i_erp_lh" value="受注/返品ミラー" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=9;endArrow=block;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="ds_erp" target="fb_lakehouse">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1526" y="737" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i_es_eh" value="取込" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=9;endArrow=block;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="fb_eventstream" target="fb_eventhouse">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1676" y="214" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i_es_lh" value="宛先/Delta≤60s" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=9;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="fb_eventstream" target="fb_lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i_lh_da" value="読取(SQL)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=9;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="fb_lakehouse" target="fb_dataagent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i_eh_rt" value="監視" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e6f;fontSize=9;dashed=1;endArrow=block;exitX=0;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="fb_eventhouse" target="fb_rtdash">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1624" y="560" />
+              <mxPoint x="1498" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== DETECTION -> NOTIFY (orange, right to left) ===== -->
+        <mxCell id="o_eh_act" value="異常検知(KQL &gt;50Nm)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=9;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="fb_eventhouse" target="fb_activator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_act_udf" value="発火" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=9;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="fb_activator" target="fb_udf">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_udf_logic" value="POST callback" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=9;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="fb_udf" target="wf_logic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="272" />
+              <mxPoint x="728" y="272" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o_logic_sp" value="参照・記録" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=9;startArrow=block;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="wf_logic" target="wf_sp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_logic_teams" value="自動通知" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0;exitY=0.4;entryX=1;entryY=0.5;" edge="1" parent="1" source="wf_logic" target="ui_teams">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_teams_fa" value="通知" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0;exitY=0.4;entryX=1;entryY=0.3;" edge="1" parent="1" source="ui_teams" target="u_factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_teams_sa" value="引き継ぎ通知" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=10;endArrow=block;exitX=0;exitY=0.6;entryX=1;entryY=0.5;" edge="1" parent="1" source="ui_teams" target="u_sales">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="198" />
+              <mxPoint x="300" y="669" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== INVESTIGATION (purple, left to right) ===== -->
+        <mxCell id="p_fa_copilot" value="AI調査(factory)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=9;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.4;" edge="1" parent="1" source="u_factory" target="ui_copilot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p_sa_copilot" value="AI調査(sales)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=9;endArrow=block;exitX=1;exitY=0.4;entryX=0;entryY=0.75;" edge="1" parent="1" source="u_sales" target="ui_copilot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p_copilot_agent" value="OBO" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=9;dashed=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ui_copilot" target="ai_agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p_agent_model" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ai_agent" target="ai_model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p_agent_iq" value="文書(MCP)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#7a52cc;fontSize=9;endArrow=block;exitX=0.8;exitY=1;entryX=0.2;entryY=0;" edge="1" parent="1" source="ai_agent" target="ai_iq">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="748" y="486" />
+              <mxPoint x="895" y="486" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p_agent_da" value="OBO 照会" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#e8820c;fontSize=10;dashed=1;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ai_agent" target="fb_dataagent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== HANDOFF + COWORK ===== -->
+        <mxCell id="h_copilot_logic" value="引き継ぎ要求（人の承認）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#d79b00;fontSize=9;endArrow=block;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ui_copilot" target="wf_logic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="465" y="300" />
+              <mxPoint x="728" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_copilot_cowork" value="営業: Work Package" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#2f9e8f;fontSize=9;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ui_copilot" target="ui_cowork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
